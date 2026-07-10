@@ -6,7 +6,7 @@
    Todo ocurre en el navegador — nada se sube a servidor.
    ============================================ */
 
-import { normalizarTexto, esNumeroTelefono } from './utils.js';
+import { normalizarTexto, esNumeroTelefono } from './utils.js?v=2026070902';
 
 /* ---------- Formatos soportados ---------- */
 

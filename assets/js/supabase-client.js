@@ -3,7 +3,7 @@
    Singleton del cliente Supabase (CDN ESM).
    ============================================ */
 
-import { CONFIG, supabaseConfigurado } from './config.js';
+import { CONFIG, supabaseConfigurado } from './config.js?v=2026070902';
 
 let cliente = null;
 

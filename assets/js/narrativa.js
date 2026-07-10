@@ -7,7 +7,7 @@
 import {
   formatearFecha, formatearMes, formatearNumero, formatearHora,
   formatearMinutos, nombreDiaSemana,
-} from './utils.js';
+} from './utils.js?v=2026070902';
 
 /**
  * Convierte la frecuencia de expresiones de amor en una frase natural.

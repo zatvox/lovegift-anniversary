@@ -4,13 +4,13 @@
    10 secciones narrativas, contadores animados y confeti.
    ============================================ */
 
-import { cargarAnalisis } from './supabase-data.js';
-import { generarNarrativa, filtrarMomentos, emojiTipoMomento } from './narrativa.js';
-import { iniciarContadorVivo } from './contador-tiempo.js';
+import { cargarAnalisis } from './supabase-data.js?v=2026070902';
+import { generarNarrativa, filtrarMomentos, emojiTipoMomento } from './narrativa.js?v=2026070902';
+import { iniciarContadorVivo } from './contador-tiempo.js?v=2026070902';
 import {
   parametroURL, escaparHTML, formatearFecha, formatearNumero,
   formatearHora, animarContador, activarAnimacionesScroll, recortarTexto,
-} from './utils.js';
+} from './utils.js?v=2026070902';
 
 const $ = (sel) => document.querySelector(sel);
 

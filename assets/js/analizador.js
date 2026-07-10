@@ -7,7 +7,7 @@
 
 import {
   claveDia, claveMes, diasEntre, normalizarTexto, extraerEmojis,
-} from './utils.js';
+} from './utils.js?v=2026070902';
 
 /* ---------- Diccionarios ---------- */
 

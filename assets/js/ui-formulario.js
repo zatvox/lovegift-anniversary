@@ -4,13 +4,13 @@
    validación, análisis local y guardado en Supabase.
    ============================================ */
 
-import { parsearChat, validarArchivoChat } from './parser.js';
-import { analizarChat } from './analizador.js';
-import { extraerJSON, validarStatsImportadas } from './validador-stats.js';
-import { MENSAJES_PROGRESO } from './narrativa.js';
-import { guardarAnalisis, construirLinkHistoria } from './supabase-data.js';
-import { supabaseConfigurado } from './config.js';
-import { generarToken, mostrarToast, copiarAlPortapapeles } from './utils.js';
+import { parsearChat, validarArchivoChat } from './parser.js?v=2026070902';
+import { analizarChat } from './analizador.js?v=2026070902';
+import { extraerJSON, validarStatsImportadas } from './validador-stats.js?v=2026070902';
+import { MENSAJES_PROGRESO } from './narrativa.js?v=2026070902';
+import { guardarAnalisis, construirLinkHistoria } from './supabase-data.js?v=2026070902';
+import { supabaseConfigurado } from './config.js?v=2026070902';
+import { generarToken, mostrarToast, copiarAlPortapapeles } from './utils.js?v=2026070902';
 
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => [...document.querySelectorAll(sel)];

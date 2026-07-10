@@ -6,8 +6,8 @@
    Incluye fallback a localStorage para modo demo sin Supabase.
    ============================================ */
 
-import { obtenerCliente } from './supabase-client.js';
-import { CONFIG } from './config.js';
+import { obtenerCliente } from './supabase-client.js?v=2026070902';
+import { CONFIG } from './config.js?v=2026070902';
 
 const PREFIJO_LOCAL = 'nuestra-historia:';
 
