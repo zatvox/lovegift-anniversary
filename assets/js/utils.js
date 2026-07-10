@@ -176,18 +176,50 @@ export function animarContador(elemento, valorFinal, duracionMs = 1800) {
   requestAnimationFrame(paso);
 }
 
-/** Observer para animaciones on-scroll (fade + slide-up) */
+/**
+ * Observer para animaciones on-scroll (fade + slide-up).
+ * IMPORTANTE: threshold 0 (no un porcentaje) porque las secciones muy altas
+ * (más altas que el viewport del celular) nunca alcanzan un % de visibilidad
+ * mayor a viewport/sección — con threshold 0.18 quedaban invisibles en mobile.
+ * El rootMargin negativo da el pequeño retraso estético al entrar.
+ */
 export function activarAnimacionesScroll(selector = '.anim-scroll', alVerse) {
+  const elementos = [...document.querySelectorAll(selector)];
+  const mostrar = (el) => {
+    el.classList.add('visible');
+    if (alVerse) alVerse(el);
+  };
+
+  // Fallback: navegadores sin IntersectionObserver → mostrar todo de inmediato
+  if (typeof IntersectionObserver === 'undefined') {
+    elementos.forEach(mostrar);
+    return null;
+  }
+
   const observer = new IntersectionObserver((entradas) => {
     for (const entrada of entradas) {
       if (entrada.isIntersecting) {
-        entrada.target.classList.add('visible');
-        if (alVerse) alVerse(entrada.target);
+        mostrar(entrada.target);
         observer.unobserve(entrada.target);
       }
     }
-  }, { threshold: 0.18 });
+  }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
 
-  document.querySelectorAll(selector).forEach((el) => observer.observe(el));
+  elementos.forEach((el) => observer.observe(el));
+
+  // Red de seguridad: cada 3s revela cualquier elemento que ya entró al
+  // viewport pero que por algún motivo el observer no marcó como visible.
+  // Nunca dejar contenido invisible; las secciones aún no alcanzadas
+  // conservan su animación de entrada.
+  const vigilante = setInterval(() => {
+    let pendientes = 0;
+    for (const el of elementos) {
+      if (el.classList.contains('visible')) continue;
+      pendientes += 1;
+      if (el.getBoundingClientRect().top < window.innerHeight) mostrar(el);
+    }
+    if (!pendientes) clearInterval(vigilante);
+  }, 3000);
+
   return observer;
 }
