@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Logo Nuestra Historia: corazón">
+  <defs>
+    <linearGradient id="gradCorazon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8A0BF"/>
+      <stop offset="100%" stop-color="#C17B8A"/>
+    </linearGradient>
+  </defs>
+  <!-- Corazón principal -->
+  <path d="M60 100 C 28 78, 14 58, 14 41 C 14 26, 26 17, 38 17 C 48 17, 56 23, 60 32 C 64 23, 72 17, 82 17 C 94 17, 106 26, 106 41 C 106 58, 92 78, 60 100 Z"
+        fill="url(#gradCorazon)"/>
+  <!-- Brillo -->
+  <path d="M32 32 C 27 35, 24 40, 24 45" stroke="#FDF6F0" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.7"/>
+  <!-- Detalle dorado: línea de "latido" del chat -->
+  <path d="M34 60 L 48 60 L 54 48 L 62 72 L 68 60 L 86 60" stroke="#C9A96E" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

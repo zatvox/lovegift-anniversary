@@ -1,0 +1,63 @@
+/* ============================================
+   NUESTRA HISTORIA — responsive.css
+   Mobile first: 320 / 640 / 1024 / 1440
+   ============================================ */
+
+/* Base = 320px+ (ya definida en styles.css: una columna, botones full-width) */
+@media (max-width: 639px) {
+  .acciones-wizard .btn { width: 100%; }
+  .btn { width: 100%; }
+  .btn-sonido, .toggle-opcionales { width: auto; }
+  .caja-link .btn { width: auto; flex: 1; }
+  .donut { width: 150px; height: 150px; }
+  .reloj-actividad { height: 90px; }
+}
+
+/* 640px+ — padding generoso */
+@media (min-width: 640px) {
+  .contenedor { padding-inline: 48px; }
+  .seccion { padding-block: 80px; }
+  .grid-stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* 1024px+ — dos columnas en bloques de estadísticas */
+@media (min-width: 1024px) {
+  .seccion { padding-block: 96px; }
+  .grid-stats { grid-template-columns: repeat(3, 1fr); }
+
+  .fila-doble {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+}
+
+/* 1440px+ — layout centrado con margen decorativo */
+@media (min-width: 1440px) {
+  body.con-decoracion::before,
+  body.con-decoracion::after {
+    content: '';
+    position: fixed;
+    top: 0; bottom: 0;
+    width: 120px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='120' viewBox='0 0 60 120'%3E%3Cpath d='M30 25c-4-8-16-8-16 2 0 7 10 12 16 17 6-5 16-10 16-17 0-10-12-10-16-2z' fill='%23E8A0BF' opacity='0.15'/%3E%3Ccircle cx='30' cy='90' r='3' fill='%23C9A96E' opacity='0.2'/%3E%3C/svg%3E");
+    background-repeat: repeat-y;
+    background-position: center;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  body.con-decoracion::before { left: 0; }
+  body.con-decoracion::after  { right: 0; }
+}
+
+/* Impresión (para guardar como PDF desde el navegador) */
+@media print {
+  .btn, .btn-sonido, .overlay-sobre, .canvas-confeti,
+  .contenedor-toasts, .decoracion-corazones { display: none !important; }
+
+  .anim-scroll { opacity: 1 !important; transform: none !important; }
+  .seccion { padding-block: 24px; page-break-inside: avoid; }
+  body { background: #fff; }
+}

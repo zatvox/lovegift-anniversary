@@ -1,0 +1,603 @@
+/* ============================================
+   NUESTRA HISTORIA — components.css
+   Botones, cards, formularios, toasts, modales, charts
+   ============================================ */
+
+/* ---------- Botones ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transicion);
+  text-decoration: none;
+}
+
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn-primario {
+  background: linear-gradient(135deg, var(--rosa-principal), var(--burdeos-suave));
+  color: #fff;
+  box-shadow: var(--sombra-glow);
+}
+.btn-primario:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(232, 160, 191, 0.35);
+}
+.btn-primario:active:not(:disabled) { transform: translateY(0); }
+
+.btn-secundario {
+  background: transparent;
+  color: var(--burdeos-suave);
+  border: 2px solid var(--rosa-principal);
+}
+.btn-secundario:hover:not(:disabled) {
+  background: rgba(232, 160, 191, 0.12);
+}
+
+.btn-terciario {
+  background: transparent;
+  color: var(--texto-secundario);
+  text-decoration: underline;
+  min-height: 44px;
+}
+
+/* ---------- Cards ---------- */
+.card {
+  background: #fff;
+  border-radius: var(--radio-card);
+  box-shadow: var(--sombra-suave);
+  padding: clamp(24px, 5vw, 40px);
+  transition: var(--transicion);
+}
+
+.card:hover { box-shadow: var(--sombra-glow); }
+
+.card-stat {
+  background: var(--crema-profunda);
+  border-radius: var(--radio-card);
+  padding: 24px;
+  text-align: center;
+}
+
+.card-stat .valor {
+  font-family: var(--fuente-romantica);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--burdeos-suave);
+  display: block;
+}
+
+.card-stat .etiqueta {
+  font-size: 0.85rem;
+  color: var(--texto-secundario);
+}
+
+.grid-stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* ---------- Formularios ---------- */
+.campo { margin-bottom: 24px; }
+
+.campo label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--texto-principal);
+}
+
+.campo .nota {
+  font-size: 0.85rem;
+  color: var(--texto-claro);
+  margin-top: 6px;
+}
+
+.campo input[type="text"],
+.campo input[type="date"],
+.campo textarea,
+.campo select {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 16px;
+  border: 2px solid var(--crema-profunda);
+  border-radius: 12px;
+  background: #fff;
+  transition: var(--transicion);
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  border-color: var(--rosa-principal);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(232, 160, 191, 0.15);
+}
+
+.campo.invalido input,
+.campo.invalido textarea { border-color: var(--error); }
+
+.mensaje-error-campo {
+  font-size: 0.85rem;
+  color: var(--error);
+  margin-top: 6px;
+  display: none;
+}
+.campo.invalido .mensaje-error-campo { display: block; }
+
+.campo textarea { min-height: 160px; resize: vertical; }
+
+/* Radios elegantes */
+.grupo-radio { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.opcion-radio {
+  flex: 1;
+  min-width: 140px;
+  position: relative;
+}
+
+.opcion-radio input { position: absolute; opacity: 0; }
+
+.opcion-radio span {
+  display: block;
+  padding: 14px 16px;
+  text-align: center;
+  border: 2px solid var(--crema-profunda);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: var(--transicion);
+}
+
+.opcion-radio input:checked + span {
+  border-color: var(--rosa-principal);
+  background: rgba(232, 160, 191, 0.12);
+  font-weight: 600;
+}
+
+.opcion-radio input:focus-visible + span {
+  outline: 3px solid var(--burdeos-suave);
+  outline-offset: 2px;
+}
+
+.opcion-radio small {
+  display: block;
+  font-weight: 400;
+  font-size: 0.78rem;
+  color: var(--texto-claro);
+  margin-top: 2px;
+}
+
+/* ---------- Timeline de momentos (capítulo "Pequeñas historias") ---------- */
+.timeline-momentos {
+  position: relative;
+  max-width: 620px;
+  margin-inline: auto;
+  padding-left: 28px;
+  text-align: left;
+}
+
+.timeline-momentos::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, var(--rosa-principal), var(--dorado-envejecido), transparent);
+}
+
+.momento-card {
+  position: relative;
+  background: #fff;
+  border-radius: var(--radio-card);
+  box-shadow: var(--sombra-suave);
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+
+.momento-card::before {
+  content: '';
+  position: absolute;
+  left: -26px;
+  top: 26px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--rosa-principal);
+  border: 2px solid var(--crema);
+  box-shadow: 0 0 0 2px var(--rosa-principal);
+}
+
+.momento-card .momento-fecha {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--dorado-envejecido);
+  font-weight: 700;
+}
+
+.momento-card .momento-titulo {
+  font-family: var(--fuente-romantica);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--texto-principal);
+  margin: 4px 0 6px;
+}
+
+.momento-card .momento-descripcion {
+  color: var(--texto-secundario);
+  line-height: 1.7;
+}
+
+.momento-card .momento-emoji {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  font-size: 1.4rem;
+}
+
+.momento-salida {
+  background: var(--crema-profunda);
+}
+
+/* ---------- Drag & drop ---------- */
+.zona-drop {
+  border: 2px dashed var(--rosa-principal);
+  border-radius: var(--radio-card);
+  background: rgba(232, 160, 191, 0.06);
+  padding: 40px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transicion);
+}
+
+.zona-drop:hover, .zona-drop.arrastrando {
+  background: rgba(232, 160, 191, 0.15);
+  border-color: var(--burdeos-suave);
+}
+
+.zona-drop.cargado {
+  border-style: solid;
+  border-color: var(--exito);
+  background: rgba(139, 185, 143, 0.1);
+}
+
+.zona-drop .icono { font-size: 2.5rem; margin-bottom: 8px; }
+
+/* ---------- Wizard ---------- */
+.wizard-pasos {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.wizard-punto {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--crema-profunda);
+  border: 2px solid var(--texto-claro);
+  transition: var(--transicion);
+}
+
+.wizard-punto.activo {
+  background: var(--rosa-principal);
+  border-color: var(--burdeos-suave);
+  transform: scale(1.25);
+}
+
+.wizard-punto.completado {
+  background: var(--exito);
+  border-color: var(--exito);
+}
+
+.paso-wizard { display: none; }
+.paso-wizard.activo { display: block; animation: entrarSeccion 0.5s ease both; }
+
+.acciones-wizard {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+/* ---------- Barra de progreso ---------- */
+.barra-progreso {
+  width: 100%;
+  height: 14px;
+  background: var(--crema-profunda);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.barra-progreso .relleno {
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--rosa-principal), var(--burdeos-suave), var(--dorado-envejecido));
+  transition: width 0.6s ease;
+}
+
+.mensaje-progreso {
+  text-align: center;
+  font-family: var(--fuente-romantica);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--texto-secundario);
+  min-height: 2em;
+  margin-top: 16px;
+}
+
+/* ---------- Barra comparativa él/ella ---------- */
+.barra-comparativa {
+  display: flex;
+  height: 44px;
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: var(--sombra-suave);
+}
+
+.barra-el, .barra-ella {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  min-width: 56px;
+  width: 0%;
+  animation: crecerBarra 1.4s ease forwards;
+}
+
+.barra-el   { background: linear-gradient(135deg, #A8C5DD, #7FA8C9); }
+.barra-ella { background: linear-gradient(135deg, var(--rosa-principal), var(--burdeos-suave)); }
+
+.leyenda-barra {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--texto-secundario);
+  margin-top: 8px;
+}
+
+/* ---------- Donut chart (CSS conic-gradient) ---------- */
+.donut {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin-inline: auto;
+  background: conic-gradient(
+    #7FA8C9 0% var(--pct-el, 50%),
+    var(--rosa-principal) var(--pct-el, 50%) 100%
+  );
+  display: grid;
+  place-items: center;
+}
+
+.donut::after {
+  content: '';
+  width: 65%;
+  height: 65%;
+  border-radius: 50%;
+  background: var(--crema);
+  grid-area: 1 / 1;
+}
+
+.donut .centro {
+  grid-area: 1 / 1;
+  z-index: 1;
+  font-size: 2rem;
+}
+
+/* ---------- Reloj de actividad por hora ---------- */
+.reloj-actividad {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 3px;
+  height: 120px;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+.reloj-actividad .hora-barra {
+  flex: 1;
+  min-width: 6px;
+  background: linear-gradient(to top, var(--rosa-principal), var(--lavanda-suave));
+  border-radius: 4px 4px 0 0;
+  transition: height 1s ease;
+  position: relative;
+}
+
+.reloj-actividad .hora-barra.pico {
+  background: linear-gradient(to top, var(--burdeos-suave), var(--rosa-principal));
+}
+
+.etiquetas-reloj {
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+  margin-inline: auto;
+  font-size: 0.75rem;
+  color: var(--texto-claro);
+  margin-top: 6px;
+}
+
+/* ---------- Toast ---------- */
+.contenedor-toasts {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: min(90vw, 400px);
+}
+
+.toast {
+  padding: 14px 20px;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: var(--sombra-glow);
+  animation: entrarSeccion 0.3s ease both;
+}
+
+.toast-exito  { background: var(--exito); }
+.toast-error  { background: var(--error); }
+.toast-info   { background: var(--burdeos-suave); }
+
+/* ---------- Modal / overlay del sobre ---------- */
+.overlay-sobre {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(160deg, var(--crema) 0%, #FBE9F0 60%, var(--lavanda-suave) 100%);
+  text-align: center;
+  padding: 24px;
+  transition: opacity 0.8s ease;
+}
+
+.overlay-sobre.cerrando { opacity: 0; pointer-events: none; }
+
+.sobre-svg {
+  width: min(70vw, 260px);
+  margin-inline: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.sobre-svg:hover { transform: scale(1.05); }
+.sobre-svg.abriendo { animation: abrirSobre 1.2s ease forwards; }
+
+/* ---------- Caja de link generado ---------- */
+.caja-link {
+  display: flex;
+  gap: 8px;
+  background: var(--crema-profunda);
+  border-radius: 12px;
+  padding: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.caja-link input {
+  flex: 1;
+  min-width: 200px;
+  border: none;
+  background: transparent;
+  padding: 10px;
+  font-size: 0.9rem;
+  color: var(--texto-secundario);
+}
+
+/* ---------- Instrucciones de exportación ---------- */
+.tabs-so {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tab-so {
+  padding: 10px 24px;
+  border-radius: 999px;
+  border: 2px solid var(--crema-profunda);
+  background: transparent;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transicion);
+}
+
+.tab-so.activo {
+  border-color: var(--rosa-principal);
+  background: rgba(232, 160, 191, 0.12);
+}
+
+.lista-pasos {
+  list-style: none;
+  counter-reset: paso;
+  max-width: 480px;
+  margin-inline: auto;
+  text-align: left;
+}
+
+.lista-pasos li {
+  counter-increment: paso;
+  position: relative;
+  padding: 10px 0 10px 52px;
+}
+
+.lista-pasos li::before {
+  content: counter(paso);
+  position: absolute;
+  left: 0; top: 8px;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--rosa-principal);
+  color: #fff;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+/* ---------- Aviso de privacidad ---------- */
+.sello-privacidad {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(139, 185, 143, 0.15);
+  border: 1px solid rgba(139, 185, 143, 0.4);
+  color: #4A7A4E;
+  border-radius: 999px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* ---------- Toggle opcionales ---------- */
+.toggle-opcionales {
+  background: none;
+  border: none;
+  color: var(--burdeos-suave);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toggle-opcionales .flecha { transition: transform 0.3s ease; }
+.toggle-opcionales[aria-expanded="true"] .flecha { transform: rotate(180deg); }
+
+/* ---------- Botón de sonido ---------- */
+.btn-sonido {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 950;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: var(--sombra-suave);
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: var(--transicion);
+}
+.btn-sonido:hover { transform: scale(1.1); }

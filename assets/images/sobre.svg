@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 200" role="img" aria-label="Sobre cerrado con corazón, haz click para abrir">
+  <defs>
+    <linearGradient id="gradSobre" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F5EBE0"/>
+      <stop offset="100%" stop-color="#EBD9C8"/>
+    </linearGradient>
+    <linearGradient id="gradSolapa" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F0E0D0"/>
+      <stop offset="100%" stop-color="#E3CDB8"/>
+    </linearGradient>
+    <linearGradient id="gradCorazonSobre" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8A0BF"/>
+      <stop offset="100%" stop-color="#C17B8A"/>
+    </linearGradient>
+    <filter id="sombraSobre" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#C17B8A" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Cuerpo del sobre -->
+  <g filter="url(#sombraSobre)">
+    <rect x="20" y="50" width="220" height="130" rx="12" fill="url(#gradSobre)" stroke="#C9A96E" stroke-width="1.5"/>
+    <!-- Pliegues laterales -->
+    <path d="M20 62 L 118 130 Q 130 138 142 130 L 240 62" fill="none" stroke="#C9A96E" stroke-width="1.2" opacity="0.5"/>
+    <!-- Solapa superior -->
+    <path d="M20 58 Q 20 50 32 50 L 228 50 Q 240 50 240 58 L 138 122 Q 130 127 122 122 Z"
+          fill="url(#gradSolapa)" stroke="#C9A96E" stroke-width="1.5"/>
+  </g>
+
+  <!-- Sello de corazón -->
+  <g class="latido">
+    <circle cx="130" cy="112" r="26" fill="#FDF6F0" stroke="#C9A96E" stroke-width="1.5"/>
+    <path d="M130 126 C 116 116, 111 108, 111 101 C 111 95, 116 91, 121 91 C 125 91, 128 94, 130 98 C 132 94, 135 91, 139 91 C 144 91, 149 95, 149 101 C 149 108, 144 116, 130 126 Z"
+          fill="url(#gradCorazonSobre)"/>
+  </g>
+</svg>

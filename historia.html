@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Una historia escrita para ti 💌</title>
+  <meta name="description" content="Alguien creó algo muy especial para ti." />
+
+  <meta property="og:title" content="Una historia escrita para ti 💌" />
+  <meta property="og:description" content="Alguien creó algo muy especial para ti. Ábrelo." />
+  <meta property="og:image" content="assets/images/og-image.png" />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/romantico.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/animaciones.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<body class="con-decoracion">
+
+  <!-- Pantalla de carga / error -->
+  <div class="overlay-sobre" id="overlay-carga">
+    <div>
+      <img src="assets/images/logo.svg" alt="" width="64" height="64" class="latido" style="margin-inline:auto;" />
+      <p class="frase-narrativa mt-2" id="texto-carga">Buscando tu historia...</p>
+    </div>
+  </div>
+
+  <!-- Sobre de bienvenida -->
+  <div class="overlay-sobre oculto" id="overlay-sobre">
+    <div>
+      <button class="sobre-svg" id="sobre" aria-label="Abrir mi regalo" style="background:none;border:none;padding:0;">
+        <img src="assets/images/sobre.svg" alt="Un sobre cerrado con un corazón" />
+      </button>
+      <h1 class="headline mt-3" id="texto-sobre" style="font-size:clamp(1.4rem,5vw,2.2rem);">Para ti, con todo el amor 💌</h1>
+      <p class="subheadline mt-1" id="subtexto-sobre"></p>
+      <button class="btn btn-primario pulso mt-4" id="btn-abrir">Abrir mi regalo ✨</button>
+    </div>
+  </div>
+
+  <!-- Botón de sonido -->
+  <button class="btn-sonido oculto" id="btn-sonido" aria-label="Activar música" aria-pressed="false">🔇</button>
+
+  <!-- Historia -->
+  <main id="historia" class="oculto" aria-live="polite"></main>
+
+  <!-- Confeti -->
+  <canvas class="canvas-confeti oculto" id="canvas-confeti" aria-hidden="true"></canvas>
+
+  <script type="module" src="assets/js/ui-historia.js"></script>
+</body>
+</html>

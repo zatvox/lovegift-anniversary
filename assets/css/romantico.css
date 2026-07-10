@@ -1,0 +1,211 @@
+/* ============================================
+   NUESTRA HISTORIA — romantico.css
+   Estética femenina: tipografía, texturas, decoración
+   ============================================ */
+
+/* ---------- Headlines románticas ---------- */
+.headline {
+  font-family: var(--fuente-romantica);
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  font-weight: 600;
+  color: var(--texto-principal);
+  text-align: center;
+}
+
+.headline em {
+  font-style: italic;
+  color: var(--burdeos-suave);
+}
+
+.subheadline {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  color: var(--texto-secundario);
+  text-align: center;
+  max-width: 560px;
+  margin-inline: auto;
+  font-weight: 300;
+}
+
+/* ---------- Números protagonistas ---------- */
+.numero-grande {
+  font-family: var(--fuente-romantica);
+  font-size: clamp(3rem, 12vw, 6rem);
+  font-weight: 600;
+  color: var(--burdeos-suave);
+  line-height: 1;
+  display: block;
+  text-align: center;
+}
+
+.numero-medio {
+  font-family: var(--fuente-romantica);
+  font-size: clamp(2rem, 7vw, 3.2rem);
+  color: var(--burdeos-suave);
+  line-height: 1.1;
+}
+
+.emoji-grande {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  display: block;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* ---------- Fondos y texturas ---------- */
+.fondo-gradiente-rosa {
+  background: linear-gradient(160deg, var(--crema) 0%, #FBE9F0 50%, var(--lavanda-suave) 100%);
+}
+
+.fondo-lavanda { background-color: var(--lavanda-suave); }
+.fondo-crema-profunda { background-color: var(--crema-profunda); }
+
+/* Papel envejecido para la carta */
+.papel-carta {
+  background:
+    radial-gradient(ellipse at 20% 10%, rgba(201, 169, 110, 0.10), transparent 60%),
+    radial-gradient(ellipse at 85% 90%, rgba(201, 169, 110, 0.12), transparent 55%),
+    linear-gradient(175deg, #FBF3E4 0%, #F4E8D0 100%);
+  border: 1px solid rgba(201, 169, 110, 0.35);
+  border-radius: var(--radio-card);
+  box-shadow: var(--sombra-glow);
+  padding: clamp(28px, 6vw, 56px);
+  position: relative;
+}
+
+.papel-carta::before {
+  content: '💌';
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+}
+
+.texto-carta {
+  font-family: var(--fuente-romantica);
+  font-style: italic;
+  font-size: clamp(1.15rem, 3.5vw, 1.5rem);
+  line-height: 1.8;
+  color: var(--texto-principal);
+  white-space: pre-wrap;
+}
+
+.firma-carta {
+  font-family: var(--fuente-romantica);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--burdeos-suave);
+  text-align: right;
+  margin-top: 24px;
+}
+
+/* ---------- Decoración ---------- */
+.decoracion-corazones {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.corazon-flotante {
+  position: absolute;
+  bottom: -30px;
+  font-size: 1.4rem;
+  opacity: 0;
+  animation: flotar 7s linear infinite;
+}
+
+.marco-dorado {
+  border: 1px solid var(--dorado-envejecido);
+  border-radius: var(--radio-card);
+  padding: 4px;
+}
+
+.marco-dorado > * {
+  border: 1px solid rgba(201, 169, 110, 0.4);
+  border-radius: calc(var(--radio-card) - 4px);
+}
+
+/* ---------- Frases narrativas ---------- */
+.frase-narrativa {
+  font-family: var(--fuente-romantica);
+  font-size: clamp(1.15rem, 3.5vw, 1.45rem);
+  font-style: italic;
+  color: var(--texto-secundario);
+  text-align: center;
+  max-width: 620px;
+  margin-inline: auto;
+  line-height: 1.7;
+}
+
+.etiqueta-seccion {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--dorado-envejecido);
+  margin-bottom: 12px;
+}
+
+.titulo-seccion {
+  font-size: clamp(1.7rem, 5vw, 2.5rem);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+/* ---------- Contador en vivo ---------- */
+.contador-vivo {
+  display: flex;
+  justify-content: center;
+  gap: clamp(12px, 4vw, 32px);
+  flex-wrap: wrap;
+}
+
+.contador-unidad {
+  text-align: center;
+  min-width: 70px;
+}
+
+.contador-unidad .valor {
+  font-family: var(--fuente-romantica);
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  font-weight: 600;
+  color: var(--burdeos-suave);
+  display: block;
+  font-variant-numeric: tabular-nums;
+}
+
+.contador-unidad .unidad {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--texto-claro);
+}
+
+/* ---------- Collage de palabras ---------- */
+.collage-palabras {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 16px;
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+.palabra-collage {
+  font-family: var(--fuente-romantica);
+  font-style: italic;
+  color: var(--burdeos-suave);
+  background: rgba(232, 160, 191, 0.14);
+  border-radius: 999px;
+  padding: 6px 18px;
+  white-space: nowrap;
+}
+
+.palabra-collage[data-nivel="1"] { font-size: 1.6rem; }
+.palabra-collage[data-nivel="2"] { font-size: 1.35rem; }
+.palabra-collage[data-nivel="3"] { font-size: 1.15rem; opacity: 0.9; }
+.palabra-collage[data-nivel="4"] { font-size: 1rem;    opacity: 0.8; }
+.palabra-collage[data-nivel="5"] { font-size: 0.9rem;  opacity: 0.7; }

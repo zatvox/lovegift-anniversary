@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuestra Historia — Convierte su chat en un regalo inolvidable</title>
+  <meta name="description" content="Convierte un año de mensajes de WhatsApp en la historia de amor más bonita que ella haya visto. Regalo digital de aniversario, privado y gratuito." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Nuestra Historia 💌" />
+  <meta property="og:description" content="Convierte un año de mensajes en la historia de amor más bonita." />
+  <meta property="og:image" content="assets/images/og-image.png" />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/romantico.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/animaciones.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<body class="fondo-gradiente-rosa con-decoracion">
+
+  <main class="contenedor" style="padding-block: 40px;">
+
+    <!-- Logo -->
+    <header class="texto-centro mb-3">
+      <img src="assets/images/logo.svg" alt="Nuestra Historia" width="72" height="72" style="margin-inline:auto;" class="latido" />
+      <p class="texto-romantico" style="font-size:1.3rem; color:var(--burdeos-suave); font-style:italic;">Nuestra Historia</p>
+    </header>
+
+    <!-- Indicador de pasos -->
+    <nav class="wizard-pasos" aria-label="Progreso del formulario">
+      <span class="wizard-punto activo" data-paso="1" aria-label="Paso 1"></span>
+      <span class="wizard-punto" data-paso="2" aria-label="Paso 2"></span>
+      <span class="wizard-punto" data-paso="3" aria-label="Paso 3"></span>
+      <span class="wizard-punto" data-paso="4" aria-label="Paso 4"></span>
+    </nav>
+
+    <!-- ============ PASO 1: Bienvenida ============ -->
+    <section class="paso-wizard activo" id="paso-1" aria-labelledby="titulo-paso-1">
+      <h1 class="headline" id="titulo-paso-1">Sorpréndela con <em>vuestra historia</em></h1>
+      <p class="subheadline mt-2">
+        Convierte un año de mensajes en la historia de amor más bonita que ella haya visto.
+        Sube el chat de WhatsApp, añade algunos datos, y en minutos tendrás un regalo digital único.
+      </p>
+
+      <div class="texto-centro mt-3">
+        <span class="sello-privacidad">🔒 Tu chat no se almacena. Todo se analiza en tu dispositivo.</span>
+      </div>
+
+      <div class="card mt-4">
+        <h2 class="texto-centro" style="font-size:1.5rem;">¿Cómo exporto nuestro chat?</h2>
+
+        <div class="tabs-so mt-2" role="tablist">
+          <button class="tab-so activo" role="tab" aria-selected="true" data-so="android">📱 Android</button>
+          <button class="tab-so" role="tab" aria-selected="false" data-so="ios">🍎 iPhone</button>
+        </div>
+
+        <ol class="lista-pasos" id="pasos-android">
+          <li>Abre WhatsApp y entra al chat de ustedes dos</li>
+          <li>Toca los 3 puntos ⋮ → «Más» → «Exportar chat»</li>
+          <li>Selecciona «Sin multimedia» y guarda el archivo <strong>.txt</strong></li>
+        </ol>
+
+        <ol class="lista-pasos oculto" id="pasos-ios">
+          <li>Abre WhatsApp y entra al chat de ustedes dos</li>
+          <li>Toca el nombre del contacto arriba</li>
+          <li>Baja hasta «Exportar chat»</li>
+          <li>Selecciona «Sin multimedia» y guarda el archivo <strong>.txt</strong></li>
+        </ol>
+      </div>
+
+      <div class="acciones-wizard" style="justify-content:center;">
+        <button class="btn btn-primario pulso" id="btn-empezar">Crear el regalo →</button>
+      </div>
+    </section>
+
+    <!-- ============ PASO 2: Los datos del amor ============ -->
+    <section class="paso-wizard" id="paso-2" aria-labelledby="titulo-paso-2">
+      <h1 class="titulo-seccion" id="titulo-paso-2">Los datos del amor</h1>
+      <p class="subheadline mb-3">Solo necesitamos lo esencial. Lo demás es opcional, pero lo hace más especial.</p>
+
+      <div class="card">
+        <!-- Archivo -->
+        <div class="campo">
+          <label for="input-archivo">El chat de ustedes (.txt exportado) o el análisis de IA (.json) *</label>
+          <div class="zona-drop" id="zona-drop" tabindex="0" role="button" aria-label="Subir archivo de chat o análisis">
+            <div class="icono">💌</div>
+            <p><strong>Arrastra el archivo aquí</strong> o haz click para elegirlo</p>
+            <p class="nota" id="nombre-archivo">.txt se analiza aquí mismo 🔒 · .json de IA se usa tal cual 🤖</p>
+          </div>
+          <input type="file" id="input-archivo" accept=".txt,.json,text/plain,application/json" class="visualmente-oculto" />
+          <p class="mensaje-error-campo" id="error-archivo"></p>
+          <p class="nota mt-1">💡 ¿Prefieres datos exactos curados por IA? Usa el prompt de
+            <a href="PROMPT_IA_ANALISIS.md" target="_blank" rel="noopener">PROMPT_IA_ANALISIS.md</a>
+            en Claude/ChatGPT y sube aquí el .json que te devuelva.</p>
+        </div>
+
+        <div class="fila-doble">
+          <div class="campo">
+            <label for="nombre-el">Tu nombre (tal como aparece en el chat) *</label>
+            <input type="text" id="nombre-el" autocomplete="given-name" maxlength="40" placeholder="Ej: Luis" required />
+            <p class="mensaje-error-campo">Escribe tu nombre</p>
+          </div>
+          <div class="campo">
+            <label for="nombre-ella">El nombre de ella (como aparece en el chat) *</label>
+            <input type="text" id="nombre-ella" maxlength="40" placeholder="Ej: Ana" required />
+            <p class="mensaje-error-campo">Escribe su nombre</p>
+          </div>
+        </div>
+
+        <div class="campo">
+          <label for="fecha-inicio">¿Cuándo empezó su relación? *</label>
+          <input type="date" id="fecha-inicio" required />
+          <p class="mensaje-error-campo">Elige una fecha válida (no puede ser futura)</p>
+        </div>
+
+        <!-- Opcionales -->
+        <button type="button" class="toggle-opcionales" id="toggle-opcionales" aria-expanded="false" aria-controls="campos-opcionales">
+          ✨ ¿Quieres hacerlo más especial? <span class="flecha">▾</span>
+        </button>
+
+        <div id="campos-opcionales" class="oculto">
+          <div class="campo">
+            <label for="primera-cita">¿Cuál fue su primera cita?</label>
+            <input type="text" id="primera-cita" maxlength="120" placeholder='Ej: "Fuimos al cine a ver..."' />
+          </div>
+          <div class="campo">
+            <label for="apodo">¿Tienen algún apodo especial?</label>
+            <input type="text" id="apodo" maxlength="80" placeholder='Ej: "Yo la llamo mi sol"' />
+          </div>
+          <div class="campo">
+            <label for="cancion">¿Hay una canción que sea de ustedes?</label>
+            <input type="text" id="cancion" maxlength="100" placeholder="Ej: Perfect — Ed Sheeran" />
+          </div>
+          <div class="campo">
+            <label for="primer-viaje">¿Cuál fue su primer viaje juntos?</label>
+            <input type="text" id="primer-viaje" maxlength="120" placeholder="Ej: Un fin de semana en Paracas" />
+          </div>
+          <div class="campo">
+            <label>Tono de la historia</label>
+            <p class="nota mb-2">Define qué momentos del chat se muestran en su historia.</p>
+            <div class="grupo-radio">
+              <label class="opcion-radio">
+                <input type="radio" name="tono" value="romantico" />
+                <span>🌹 Romántica<br /><small>momentos tiernos y declaraciones</small></span>
+              </label>
+              <label class="opcion-radio">
+                <input type="radio" name="tono" value="jugueton" />
+                <span>😄 Divertida<br /><small>anécdotas graciosas y cómplices</small></span>
+              </label>
+              <label class="opcion-radio">
+                <input type="radio" name="tono" value="completo" checked />
+                <span>💝 Todos los momentos<br /><small>la historia completa</small></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acciones-wizard">
+        <button class="btn btn-secundario" data-atras="1">← Atrás</button>
+        <button class="btn btn-primario" id="btn-a-paso-3">Continuar →</button>
+      </div>
+    </section>
+
+    <!-- ============ PASO 3: Tu mensaje para ella ============ -->
+    <section class="paso-wizard" id="paso-3" aria-labelledby="titulo-paso-3">
+      <h1 class="titulo-seccion" id="titulo-paso-3">Tu mensaje para ella</h1>
+      <p class="subheadline mb-3">Aparecerá al final de su historia, como una carta tuya.</p>
+
+      <div class="card">
+        <div class="campo">
+          <label for="mensaje-personal">Escríbele algo desde el corazón...</label>
+          <textarea id="mensaje-personal" placeholder="Escríbele algo desde el corazón... aparecerá al final de su historia como una carta tuya."></textarea>
+          <p class="nota"><span id="contador-caracteres">0</span> caracteres — recomendado: máximo 500</p>
+        </div>
+
+        <p class="nota mb-2">Así se verá:</p>
+        <div class="papel-carta" aria-hidden="true">
+          <p class="texto-carta" id="preview-carta">Tu mensaje aparecerá aquí...</p>
+          <p class="firma-carta" id="preview-firma">Con todo mi amor</p>
+        </div>
+      </div>
+
+      <div class="acciones-wizard">
+        <button class="btn btn-secundario" data-atras="2">← Atrás</button>
+        <button class="btn btn-primario" id="btn-generar">Crear su historia 💝</button>
+      </div>
+    </section>
+
+    <!-- ============ PASO 4: Procesamiento + resultado ============ -->
+    <section class="paso-wizard" id="paso-4" aria-labelledby="titulo-paso-4">
+      <h1 class="titulo-seccion" id="titulo-paso-4">Creando su historia...</h1>
+
+      <div class="card texto-centro" id="panel-progreso">
+        <div class="barra-progreso mt-3" role="progressbar" aria-label="Progreso del análisis">
+          <div class="relleno" id="relleno-progreso"></div>
+        </div>
+        <p class="mensaje-progreso" id="mensaje-progreso" aria-live="polite">Leyendo su historia desde el principio... 📖</p>
+      </div>
+
+      <div class="card texto-centro oculto" id="panel-resultado">
+        <div class="emoji-grande latido">💝</div>
+        <h2 style="font-size:1.8rem;">¡Su historia está lista!</h2>
+        <p class="subheadline mt-1 mb-3">Envíale este link. Cuando lo abra, descubrirá su regalo.</p>
+
+        <div class="caja-link">
+          <input type="text" id="link-generado" readonly aria-label="Link de la historia" />
+          <button class="btn btn-primario" id="btn-copiar">📋 Copiar link</button>
+        </div>
+
+        <p class="nota mt-2 oculto" id="aviso-modo-local">
+          ⚠️ Supabase no está configurado: el link solo funcionará en este dispositivo (modo demo).
+          Configura <code>assets/js/config.js</code> para links compartibles.
+        </p>
+
+        <div class="acciones-wizard" style="justify-content:center;">
+          <a class="btn btn-secundario" id="btn-preview" target="_blank" rel="noopener">👀 Ver preview</a>
+          <button class="btn btn-terciario" id="btn-otra">Crear otra historia</button>
+        </div>
+        <p class="nota mt-2">💡 Ella podrá guardar su historia como PDF desde el botón final de la página.</p>
+      </div>
+
+      <div class="card texto-centro oculto" id="panel-error">
+        <div class="emoji-grande">🥺</div>
+        <h2 style="font-size:1.5rem;">Algo no salió bien</h2>
+        <p class="subheadline mt-1" id="texto-error"></p>
+        <div class="acciones-wizard" style="justify-content:center;">
+          <button class="btn btn-primario" data-atras="2">← Revisar datos</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="texto-centro mt-4" style="padding-block:24px;">
+      <hr class="separador" />
+      <p class="nota">Hecho con 💗 · <a href="historia.html?demo=1">Ver historia de ejemplo</a></p>
+    </footer>
+  </main>
+
+  <script type="module" src="assets/js/ui-formulario.js"></script>
+</body>
+</html>

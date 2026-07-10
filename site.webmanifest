@@ -1,0 +1,13 @@
+{
+  "name": "Nuestra Historia",
+  "short_name": "NuestraHistoria",
+  "description": "Convierte un año de mensajes en la historia de amor más bonita.",
+  "icons": [
+    { "src": "assets/images/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/images/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#E8A0BF",
+  "background_color": "#FDF6F0"
+}

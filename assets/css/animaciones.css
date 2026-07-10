@@ -1,0 +1,89 @@
+/* ============================================
+   NUESTRA HISTORIA — animaciones.css
+   Keyframes, transiciones y efectos de scroll
+   ============================================ */
+
+/* 1. Sobre que se abre */
+@keyframes abrirSobre {
+  0%   { transform: rotateX(0deg) scale(1); opacity: 1; }
+  50%  { transform: rotateX(-30deg) scale(1.05); opacity: 1; }
+  100% { transform: rotateX(-180deg) scale(1.1); opacity: 0; }
+}
+
+/* 2. Corazones flotantes */
+@keyframes flotar {
+  0%   { transform: translateY(0) rotate(0deg) scale(0.8); opacity: 0; }
+  15%  { opacity: 0.8; }
+  100% { transform: translateY(-110vh) rotate(25deg) scale(1.2); opacity: 0; }
+}
+
+/* 3. Fade + slide-up para secciones on-scroll */
+@keyframes entrarSeccion {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.anim-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.anim-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Retrasos escalonados para hijos */
+.anim-scroll.visible > *:nth-child(2) { transition-delay: 0.1s; }
+.anim-scroll.visible > *:nth-child(3) { transition-delay: 0.2s; }
+.anim-scroll.visible > *:nth-child(4) { transition-delay: 0.3s; }
+
+/* 4. Barra de porcentaje que crece */
+@keyframes crecerBarra {
+  from { width: 0%; }
+  to   { width: var(--porcentaje-final, 50%); }
+}
+
+/* 5. Latido de corazón */
+@keyframes latido {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.12); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.12); }
+  70% { transform: scale(1); }
+}
+
+.latido { animation: latido 1.8s ease-in-out infinite; transform-origin: center; }
+
+/* 6. Brillo suave (elementos dorados) */
+@keyframes brillo {
+  0%, 100% { opacity: 0.7; }
+  50%      { opacity: 1; }
+}
+
+.brillo { animation: brillo 3s ease-in-out infinite; }
+
+/* 7. Aparición suave genérica */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.fade-in { animation: fadeIn 1s ease both; }
+
+/* 8. Pulso para el CTA principal */
+@keyframes pulsoSuave {
+  0%, 100% { box-shadow: 0 8px 32px rgba(232, 160, 191, 0.25); }
+  50%      { box-shadow: 0 8px 44px rgba(232, 160, 191, 0.5); }
+}
+
+.pulso { animation: pulsoSuave 2.5s ease-in-out infinite; }
+
+/* 9. Canvas de confeti */
+.canvas-confeti {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 800;
+}
